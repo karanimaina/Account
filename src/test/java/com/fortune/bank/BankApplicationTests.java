@@ -1,4 +1,4 @@
-package com.fortune.bank.bank;
+package com.fortune.bank;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

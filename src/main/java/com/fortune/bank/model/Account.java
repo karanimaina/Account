@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.Date;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,5 +23,5 @@ public class Account {
     private String accountNumber;
     private  String branchAddress;
     @CreatedDate
-    private LocalDate createDt;
+    private Date createDt;
 }

@@ -1,12 +1,9 @@
 package com.fortune.bank.controller;
 
 import ch.qos.logback.core.net.ObjectWriter;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fortune.bank.Dto.AccountDto;
 import com.fortune.bank.Dto.CustomerDto;
 import com.fortune.bank.commons.UniversalResponse;
-import com.fortune.bank.config.AccountServiceConfig;
 import com.fortune.bank.model.Account;
 import com.fortune.bank.model.Customer;
 import com.fortune.bank.service.AccountService;
@@ -17,7 +14,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Properties;
 
 @RestController
 @RequestMapping("api")
@@ -57,11 +53,4 @@ public class AccountController {
         List<Customer> customerList = accountService.getCustomers();
         return  ResponseEntity.ok().body(UniversalResponse.builder().data(customerList).status(200).message("customers retrieved").build());
     }
-//    @GetMapping("/account/properties")
-//    public String getPropertyDetails() throws JsonProcessingException{
-//      ObjectWriter ow = (ObjectWriter) new ObjectMapper().writer().withDefaultPrettyPrinter();
-//      Properties properties = new Prope rties(accountServiceConfig.getMsg(),accountServiceConfig.getBuildVersion(),accountServiceConfig.getMailDetails(),accountServiceConfig.getActiveBranches());
-//        return (String) ow.write(properties);
-//
-//    }
 }
