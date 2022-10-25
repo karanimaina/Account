@@ -50,7 +50,7 @@ public class AccountService {
      public List<Customer> getCustomers (){
          return customerRepository.findAll();
      }
-//    public List<Account>getAccount(){
-//        return accountRepository.findAll();
-//    }
+    public List<Account>getAccount(){
+        return accountRepository.findAll();
+    }
 }
