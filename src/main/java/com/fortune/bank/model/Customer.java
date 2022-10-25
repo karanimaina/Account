@@ -1,6 +1,6 @@
-package com.fortune.bank.bank.model;
+package com.fortune.bank.model;
 
-import com.fortune.bank.bank.auditing.AuditorBase;
+import com.fortune.bank.auditing.AuditorBase;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

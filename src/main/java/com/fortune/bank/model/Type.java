@@ -1,4 +1,4 @@
-package com.fortune.bank.bank.model;
+package com.fortune.bank.model;
 
 public  enum Type {
     PERSONAL

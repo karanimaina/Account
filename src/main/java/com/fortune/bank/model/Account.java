@@ -8,7 +8,7 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
-//@AllArgsConstructor
+@AllArgsConstructor
 //@NoArgsConstructor
 //@Getter @Setter
 public class Account {
