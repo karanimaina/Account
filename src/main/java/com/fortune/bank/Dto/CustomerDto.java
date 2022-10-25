@@ -1,10 +1,6 @@
-package com.fortune.bank.bank.Dto;
+package com.fortune.bank.Dto;
 
-import com.fortune.bank.bank.auditing.AuditorBase;
 import lombok.Data;
-import org.springframework.data.annotation.CreatedDate;
-
-import java.time.LocalDate;
 
 @Data
 public class CustomerDto  {
