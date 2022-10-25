@@ -1,4 +1,4 @@
-package com.fortune.bank.bank.commons;
+package com.fortune.bank.commons;
 
 import lombok.Builder;
 import lombok.Data;
