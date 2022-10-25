@@ -1,3 +1,5 @@
+import com.fortune.bank.model.Account;
+
 //package com.fortune.bank.service;
 //
 //import com.fortune.bank.Dto.AccountDto;
@@ -18,11 +20,11 @@
 public class AccountService {
     private final AccountRepository accountRepository;
     private final CustomerRepository customerRepository;
-//     public Account addAccount(AccountDto accountDto){
-//         Account account = accountRepository.findByCustomerId(accountDto.getCustomerId());
-//         if (account!= null){
-//             return account;
-//         }
+     public Account addAccount(AccountDto accountDto){
+         Account account = accountRepository.findByCustomerId(accountDto.getCustomerId());
+         if (account!= null){
+             return account;
+         }
 //         throw  new AccountDoesNotExist("account does not exist");
 //     }
 //     public Customer addCustomer(CustomerDto customerDto){
