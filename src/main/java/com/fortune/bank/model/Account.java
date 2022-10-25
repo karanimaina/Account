@@ -1,4 +1,4 @@
-package com.fortune.bank.bank.model;
+package com.fortune.bank.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
