@@ -1,11 +1,15 @@
-package com.fortune.bank.bank.controller;
+package com.fortune.bank.controller;
 
-import com.fortune.bank.bank.Dto.AccountDto;
-import com.fortune.bank.bank.Dto.CustomerDto;
-import com.fortune.bank.bank.commons.UniversalResponse;
-import com.fortune.bank.bank.model.Account;
-import com.fortune.bank.bank.model.Customer;
-import com.fortune.bank.bank.service.AccountService;
+import ch.qos.logback.core.net.ObjectWriter;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fortune.bank.Dto.AccountDto;
+import com.fortune.bank.Dto.CustomerDto;
+import com.fortune.bank.commons.UniversalResponse;
+import com.fortune.bank.config.AccountServiceConfig;
+import com.fortune.bank.model.Account;
+import com.fortune.bank.model.Customer;
+import com.fortune.bank.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +17,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Properties;
 
 @RestController
 @RequestMapping("api")
 @RequiredArgsConstructor
 public class AccountController {
     private final AccountService accountService;
+
     @PostMapping("/add/account")
     ResponseEntity<UniversalResponse>addAccount(@RequestBody AccountDto accountDto){
        Account  account = accountService.addAccount(accountDto);
@@ -51,4 +57,11 @@ public class AccountController {
         List<Customer> customerList = accountService.getCustomers();
         return  ResponseEntity.ok().body(UniversalResponse.builder().data(customerList).status(200).message("customers retrieved").build());
     }
+//    @GetMapping("/account/properties")
+//    public String getPropertyDetails() throws JsonProcessingException{
+//      ObjectWriter ow = (ObjectWriter) new ObjectMapper().writer().withDefaultPrettyPrinter();
+//      Properties properties = new Prope rties(accountServiceConfig.getMsg(),accountServiceConfig.getBuildVersion(),accountServiceConfig.getMailDetails(),accountServiceConfig.getActiveBranches());
+//        return (String) ow.write(properties);
+//
+//    }
 }
