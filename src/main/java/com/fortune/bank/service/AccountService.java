@@ -1,12 +1,8 @@
 package com.fortune.bank.service;
 
-import com.fortune.bank.exceptions.AccountExist;
-import com.fortune.bank.model.Account;
-
-
 import com.fortune.bank.Dto.AccountDto;
 import com.fortune.bank.Dto.CustomerDto;
-import com.fortune.bank.exceptions.AccountDoesNotExist;
+import com.fortune.bank.exceptions.AccountExist;
 import com.fortune.bank.exceptions.CustomerDoesNotExist;
 import com.fortune.bank.model.Account;
 import com.fortune.bank.model.Customer;
@@ -15,11 +11,8 @@ import com.fortune.bank.repo.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-//import lombok.RequiredArgsConstructor;
-//import org.springframework.stereotype.Service;
-//
-//import java.util.List;
-//
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class AccountService {
@@ -54,10 +47,10 @@ public class AccountService {
          throw  new CustomerDoesNotExist("customer does not exist");
      }
 
-//     public List<Customer>getCustomers (){
-//         return customerRepository.findAll();
-//     }
+     public List<Customer> getCustomers (){
+         return customerRepository.findAll();
+     }
 //    public List<Account>getAccount(){
 //        return accountRepository.findAll();
 //    }
-//}
+}
