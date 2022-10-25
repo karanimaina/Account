@@ -9,8 +9,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
 @AllArgsConstructor
-//@NoArgsConstructor
-//@Getter @Setter
+@NoArgsConstructor
+@Getter @Setter
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
