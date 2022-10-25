@@ -1,15 +1,20 @@
+package com.fortune.bank.service;
+
+import com.fortune.bank.exceptions.AccountExist;
 import com.fortune.bank.model.Account;
 
-//package com.fortune.bank.service;
-//
-//import com.fortune.bank.Dto.AccountDto;
-//import com.fortune.bank.Dto.CustomerDto;
-//import com.fortune.bank.exceptions.AccountDoesNotExist;
-//import com.fortune.bank.exceptions.CustomerDoesNotExist;
-//import com.fortune.bank.model.Account;
-//import com.fortune.bank.model.Customer;
-//import com.fortune.bank.repo.AccountRepository;
-//import com.fortune.bank.repo.CustomerRepository;
+
+import com.fortune.bank.Dto.AccountDto;
+import com.fortune.bank.Dto.CustomerDto;
+import com.fortune.bank.exceptions.AccountDoesNotExist;
+import com.fortune.bank.exceptions.CustomerDoesNotExist;
+import com.fortune.bank.model.Account;
+import com.fortune.bank.model.Customer;
+import com.fortune.bank.repo.AccountRepository;
+import com.fortune.bank.repo.CustomerRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 //import lombok.RequiredArgsConstructor;
 //import org.springframework.stereotype.Service;
 //
@@ -21,11 +26,17 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final CustomerRepository customerRepository;
      public Account addAccount(AccountDto accountDto){
-         Account account = accountRepository.findByCustomerId(accountDto.getCustomerId());
-         if (account!= null){
+         Account account = accountRepository.findAccountByAccountNumber(accountDto.getAccountNumber());
+         Customer customer = customerRepository.findById(accountDto.getCustomerId()).orElse(null);
+         if (account!= null && customer==null){
+             throw  new AccountExist("one of the values is null");
+         }
+         Account account1 = new Account();
+         account1.setAccountNumber(accountDto.getAccountNumber());
+         account1.setCustomer(accountDto.getCustomerId());
              return account;
          }
-//         throw  new AccountDoesNotExist("account does not exist");
+//
 //     }
 //     public Customer addCustomer(CustomerDto customerDto){
 //         Customer customer = customerRepository.findCustomerByUsername(customerDto.getUsername()).orElse(null);
