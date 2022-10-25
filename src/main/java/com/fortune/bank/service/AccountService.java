@@ -32,25 +32,28 @@ public class AccountService {
              throw  new AccountExist("one of the values is null");
          }
          Account account1 = new Account();
-         account1.setAccountNumber(accountDto.getAccountNumber());
-         account1.setCustomer(accountDto.getCustomerId());
-             return account;
+         account1.setAccountNumber(accountDto.getBranchAddress());
+         account1.setCustomer(customer);
+         account1.setType(accountDto.getType());
+         account1.setBranchAddress(accountDto.getBranchAddress());
+         account1.setCreateDt(accountDto.getCreatdate());
+         accountRepository.save(account1);
+             return account1;
          }
-//
-//     }
-//     public Customer addCustomer(CustomerDto customerDto){
-//         Customer customer = customerRepository.findCustomerByUsername(customerDto.getUsername()).orElse(null);
-//         if (customer==null){
-//             Customer customer1 = new Customer();
-//             customer1.setUsername(customerDto.getUsername());
-//             customer1.setMobileNumber(customerDto.getMobileNumber());
-//             customer1.setEmail(customerDto.getEmail());
-//             customerRepository.save(customer1);
-//             return customer1;
-//         }
-//         throw  new CustomerDoesNotExist("customer does not exist");
-//     }
-//
+
+     public Customer addCustomer(CustomerDto customerDto){
+         Customer customer = customerRepository.findCustomerByUsername(customerDto.getUsername()).orElse(null);
+         if (customer==null){
+             Customer customer1 = new Customer();
+             customer1.setUsername(customerDto.getUsername());
+             customer1.setMobileNumber(customerDto.getMobileNumber());
+             customer1.setEmail(customerDto.getEmail());
+             customerRepository.save(customer1);
+             return customer1;
+         }
+         throw  new CustomerDoesNotExist("customer does not exist");
+     }
+
 //     public List<Customer>getCustomers (){
 //         return customerRepository.findAll();
 //     }
