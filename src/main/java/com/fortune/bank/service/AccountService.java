@@ -16,8 +16,8 @@
 @Service
 @RequiredArgsConstructor
 public class AccountService {
-//    private final AccountRepository accountRepository;
-//    private final CustomerRepository customerRepository;
+    private final AccountRepository accountRepository;
+    private final CustomerRepository customerRepository;
 //     public Account addAccount(AccountDto accountDto){
 //         Account account = accountRepository.findByCustomerId(accountDto.getCustomerId());
 //         if (account!= null){
