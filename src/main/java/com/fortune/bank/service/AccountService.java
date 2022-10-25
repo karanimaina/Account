@@ -13,9 +13,9 @@
 //
 //import java.util.List;
 //
-//@Service
+@Service
 //@RequiredArgsConstructor
-//public class AccountService {
+public class AccountService {
 //    private final AccountRepository accountRepository;
 //    private final CustomerRepository customerRepository;
 //     public Account addAccount(AccountDto accountDto){
