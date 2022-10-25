@@ -1,4 +1,4 @@
-package com.fortune.bank.bank.exceptions;
+package com.fortune.bank.exceptions;
 
 public class AccountDoesNotExist extends IllegalArgumentException {
     public AccountDoesNotExist(String s) {

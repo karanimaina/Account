@@ -1,6 +1,6 @@
-package com.fortune.bank.bank.exceptions;
+package com.fortune.bank.exceptions;
 
-import com.fortune.bank.bank.commons.UniversalResponse;
+import com.fortune.bank.commons.UniversalResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
