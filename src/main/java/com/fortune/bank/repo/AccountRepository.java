@@ -1,6 +1,6 @@
-package com.fortune.bank.bank.repo;
+package com.fortune.bank.repo;
 
-import com.fortune.bank.bank.model.Account;
+import com.fortune.bank.model.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
