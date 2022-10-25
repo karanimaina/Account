@@ -1,16 +1,15 @@
-package com.fortune.bank.bank.Dto;
+package com.fortune.bank.Dto;
 
-import com.fortune.bank.bank.model.Type;
+import com.fortune.bank.model.Type;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Enumerated;
+import java.util.Date;
 
 @Data
 public class AccountDto {
-
     private Type type;
-    private String accountNumber;
     private  String branchAddress;
+    private String accountNumber;
     private long customerId;
+    private Date creatdate = new Date();
 }
